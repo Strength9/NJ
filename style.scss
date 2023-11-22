@@ -1,5 +1,5 @@
  /*!
- Theme Name: Theme Name
+ Theme Name: nj
  Theme URI: https://strength9.co.uk
  Description: warp9 Naked Base Theme
  Author: Dave Pratt
@@ -14,9 +14,201 @@
 
 
 @use '_development/scss/global';  
-@use '_development/scss/_base/fonts';
-@use '_development/scss/_thirdparty/_splidecore';
-@use '_development/scss/_base/base_style';   
-@use '_development/scss/_page_structure/header';
-@use '_development/scss/_page_structure/footer';
+
+@use '_development/scss/main'; 
+@use '_development/scss/colours';
+@use '_development/scss/responsive';
+
+// @use '_development/scss/_base/fonts';
+ @use '_development/scss/_thirdparty/_splidecore';
+// @use '_development/scss/_base/base_style';   
+// @use '_development/scss/_page_structure/header';
+// @use '_development/scss/_page_structure/footer';
 @use 'blocks/blocks';   
+
+li.socialbits {
+    height:50px;
+    width:100%;
+    overflow:hidden;
+
+    margin-top:30px !important;    
+
+    
+    ul.socialmedia {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    
+        margin: 0 auto;
+    
+        
+        
+        margin-right:0;
+    
+        li {
+            margin:0 !important;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 10px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: var(--primary-bg-color);
+                color: #fff;
+                font-size: 1.5rem;
+                transition: all .3s ease-in-out;
+    
+                i {color:#FFF; font-size:20px;}
+                
+                
+                &:hover {
+                    background-color: var(--base-colour);
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+.full-screen-nav {
+    li.firstsmaller {
+        margin-top:50px;
+    }
+    @media only screen and (min-width: 500px) {
+    li.firstsmaller {
+        margin-top:50px;
+        font-size:22px !important;
+
+    }
+    li.smaller {
+        
+        font-size:22px !important;
+
+    }
+}
+    ul.socialmedia {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    
+        margin: 30px auto;
+    
+        
+        margin-right:0;
+    
+        li {
+            margin:0 !important;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 10px 0 0;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: var(--primary-bg-color);
+                color: #fff;
+                font-size: 1.5rem;
+                transition: all .3s ease-in-out;
+    
+                i {color:#FFF; font-size:20px;}
+                
+                
+                &:hover {
+                    background-color: var(--base-colour);
+                }
+            }
+        }
+    }
+
+
+}
+
+.wpforms-field-container {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap:0px;
+
+    #wpforms-407-field_7-description {
+        background:none !important;
+        border:0 !important;
+    }
+
+    @media only screen and (min-width: 550px) {
+      grid-template-columns: 1fr 1fr;
+      gap:0 30px;
+    
+        #wpforms-407-field_6-container {
+            grid-column: 1 / 3;
+        }
+        #wpforms-407-field_7-container {
+            grid-column: 1 / 3;
+        }
+    
+    }
+
+
+
+
+
+
+
+
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], textarea {
+    background-color: rgb(248,248,248) !important;
+    border:0px !important;
+    color: #000 !important;
+    font-family: var(--base-font);
+    font-size:14px !important;
+}
+
+::placeholder {
+    color: #000 !important;
+    font-family: var(--base-font);
+    font-size:14px !important;
+}
+    
+
+}
+
+.wpforms-submit-container {
+    text-align:right;
+
+    #wpforms-submit-407 {
+        font-family: var(--font-base) !important;
+        font-weight:var(font-weight-semibold) !important;
+        background-color:#000 !important;
+        color:#FFF  !important;
+        transition:all .25s ease-in-out;
+        padding:10px 25px;
+
+        &:hover {
+            background: none !important;
+            opacity:1!important;
+            background-color:var(--primary-bg-color)  !important;
+        }
+    }
+}
+
+.wpforms-confirmation-container-full  {
+    border:0 !important;
+    background: none !important;
+    text-align:center !important;
+
+
+    h2 {text-align:center;
+        font-family : var(--font-base-heading);
+        color:#000;
+    }
+
+    p {
+        font-family : var(--font-base);
+        color:#000;
+    }
+}

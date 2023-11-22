@@ -1,0 +1,16 @@
+{
+    "name": "text-page",
+    "title": "Text Page",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/textpage/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

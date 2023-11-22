@@ -1,8 +1,13 @@
-@use '_development/scss/global'; 
-@use '_development/scss/_base/fonts';
-@use '_development/scss/_thirdparty/_splidecore';
-@use '_development/scss/_base/base_style';   
-@use '_development/scss/_page_structure/header';
-@use '_development/scss/_page_structure/footer';
-@use 'blocks/blocks';   
+@use '_development/scss/global';  
+
+@use '_development/scss/main'; 
+@use '_development/scss/colours';
+@use '_development/scss/responsive';
+
+// @use '_development/scss/_base/fonts';
+ @use '_development/scss/_thirdparty/_splidecore';
+// @use '_development/scss/_base/base_style';   
+// @use '_development/scss/_page_structure/header';
+// @use '_development/scss/_page_structure/footer';
+@use 'blocks/blocks'; 
 @use '_development/scss/_base/_admin_overides'; 

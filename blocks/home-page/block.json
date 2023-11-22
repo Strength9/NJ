@@ -1,0 +1,16 @@
+{
+    "name": "home-page",
+    "title": "Home Page",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/home-page/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

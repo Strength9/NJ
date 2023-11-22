@@ -1,0 +1,16 @@
+{
+    "name": "calltoaction",
+    "title": "Call To Action",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/calltoaction/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

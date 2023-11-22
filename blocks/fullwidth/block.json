@@ -1,0 +1,16 @@
+{
+    "name": "fullwidth",
+    "title": "Full Width",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/fullwidth/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

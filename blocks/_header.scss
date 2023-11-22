@@ -1,0 +1,130 @@
+.pageheader {
+    box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position: center bottom ;
+	background-size: cover;
+	height: 300px;
+    padding:30px 0 0;
+
+	@media only screen and (min-width: 600px) {
+		height: 300px;
+	}
+
+	@media only screen and (min-width: 900px) {
+		height:400px;
+	}
+
+
+    .navigationbar {
+        max-width:1300px;
+        width:90%;
+        margin:0px auto;
+        height:80px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: center;
+
+
+        .headerlogo {
+            width: 150px;
+            height: auto;
+            background-repeat: no-repeat;
+            background-position: center center ;
+            background-size: contain;
+            margin:0;
+            padding:0;
+
+            @media only screen and (min-width: 600px) {
+                width: 200px;
+            }
+
+            img {
+                display:block;
+                width:100%;
+                height:auto;
+                height:auto;
+            }
+        }
+
+        .menuicon {
+            i {
+                font-size:40px;
+                
+                color:#FFF;
+            
+            }
+
+            &:hover {
+                cursor:pointer;
+
+                i {
+                    color:#1d1d1b;
+                }
+            }
+        }
+    }
+
+}
+
+.homenj{
+
+
+    .navigationbar {
+        position:absolute;
+        top:30px;
+        
+        max-width:1300px;
+        width:90%;
+        margin:0px auto;
+        height:80px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: space-between;
+        align-items: center;
+
+
+        .headerlogo {
+            width: 150px;
+            height: auto;
+            background-repeat: no-repeat;
+            background-position: center center ;
+            background-size: contain;
+            margin:0;
+            padding:0;
+
+            @media only screen and (min-width: 600px) {
+                width: 200px;
+            }
+
+            img {
+                display:block;
+                width:100%;
+                height:auto;
+                height:auto;
+            }
+        }
+
+        .menuicon {
+            i {
+                font-size:40px;
+                
+                color:#1d1d1b;
+            
+            }
+
+            &:hover {
+                cursor:pointer;
+
+                i {
+                    color:var(--primary-bg-color);
+                }
+            }
+        }
+    }
+
+}

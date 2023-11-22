@@ -1,0 +1,16 @@
+{
+    "name": "nj_header",
+    "title": "NJ Header",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/nj_header/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

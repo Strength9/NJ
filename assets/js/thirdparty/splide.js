@@ -3152,3 +3152,35 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   Splide.STATES = STATES;
   return Splide;
 });
+
+
+
+
+
+  new Splide( '#splide_insurance', {
+    arrows: false,
+      autoplay : true,
+      trimSpace : true,
+      rewind : false,
+  type   : 'loop',
+  perPage: 5,
+  pagination: false,
+  breakpoints: {
+          1300: {
+              perPage:5,
+          },
+          1000: {
+              perPage: 4,
+          },
+      900: {
+              perPage: 3,
+          },
+          800: {
+              perPage: 2,
+          },
+          500: {
+              perPage: 1,
+              pagination: false,
+          },
+      }
+  } ).mount();

@@ -1,0 +1,16 @@
+{
+    "name": "teams",
+    "title": "Team",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/teams/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

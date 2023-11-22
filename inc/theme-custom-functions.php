@@ -73,6 +73,12 @@ function contactdetails($returntype) {
                 $contact_whatsapp_number = !empty( get_field('contact_whatsapp_number','options') ) ? '<a href="https://wa.me/'.format_number(get_field('contact_whatsapp_number','options')).'" title="Get in touch via Whatsapp">'.get_field('contact_whatsapp_number','options') .'</a>' : '';
                 return $contact_whatsapp_number;
                 break;
+                case 'address':
+                    $address = !empty( get_field('address','options') ) ? get_field('address','options') : '';
+                    return $address;
+                    break;
+
+                
         default:
             return 'Please specify a return type';
             break;
@@ -140,4 +146,149 @@ function createbreadcrumb() {
  * Add support for excerpts to pages.
  */
 add_post_type_support( 'page', 'excerpt' );
+
+
+
+
+function navigationmenu($class = '') {
+
+    $email_icon = !empty( get_field('email_icon','options') ) ? get_field('email_icon','options'): 'Email';
+    $contact_email_address = !empty( get_field('contact_email_address','options') ) ? '<li class="firstsmaller"><a href="mailto:'.get_field('contact_email_address','options').'" title="Email Us">'.$email_icon.' '.get_field('contact_email_address','options').'</a></li>' : '';
+
+    $telephone_icon = !empty( get_field('telephone_icon','options') ) ? get_field('telephone_icon','options'): 'Telephone';
+    $contact_phone_number = !empty( get_field('contact_phone_number','options') ) ? '<li class="smaller"><a href="tel:'.format_number(get_field('contact_phone_number','options')).'" title="Get in touch by Phone">'.$telephone_icon.' '.get_field('contact_phone_number','options').'</a></li>' : '';
+
+    $whatsapp_icon = !empty( get_field('whatsapp_icon','options') ) ? get_field('whatsapp_icon','options'): 'WhatsApp';
+    $contact_whatsapp_number = !empty( get_field('contact_whatsapp_number','options') ) ? '<li class="smaller"><a href="https://wa.me/'.format_number(get_field('contact_whatsapp_number','options')).'" title="Get in touch via Whatsapp">'.$whatsapp_icon.' '.get_field('contact_whatsapp_number','options') .'</a></li>' : '';
+
+   
+
+    $tnav  = wp_nav_menu( array(  'menu' => 'MainHeader', 'container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<ul class="'.$class.'">%3$s'.$contact_email_address.$contact_phone_number.$contact_whatsapp_number.'</ul>' ) );
+    
+
+    return $tnav;
+}
+
+
+function topheader() {
+    $tnav  = wp_nav_menu( array(  'menu' => 'MainHeader', 'container'  => '', 'container_class' => '', 'container_id'    => '',   'depth' => 1 , 'items_wrap' => '<header class="header-default">
+    <div class="container">
+        <a href="'.home_url().'">
+            <img src="/wp-content/uploads/2023/11/NJGraphique.svg" alt="NJ Graphique" class="logo">
+        </a>
+        <a href="#" class="nav-open"><i></i></a>
+        <nav class="navigation"><ul>%3$s</ul></nav> 
+        <div class="clearfix"></div>
+    </div> 
+</header> ' ) );
+    
+
+return $tnav;
+    
+}
+
+
+
+
+// Portfolio Images
+function portfoliolink($id = '', $area='') {
+
+	$output = '<a href=""> <div class="portfolio-item"> <div class="portfolio-item-overlay"> <div class="info"> <h2 class="portfolio-item-title">Area Title '.$id.'</h2> <h3 class="portfolio-item-category">Brand '.$id.'</h3> </div> </div>  </div> </a>';
+
+	$pit = !empty( get_field('portfolio_item_portfolio_item_title_'.$id,'') ) ? '<h2 class="portfolio-item-title">'.get_field('portfolio_item_portfolio_item_title_'.$id,'').'</h2>': '';
+	$pitbr = !empty( get_field('portfolio_item_portfolio_item_strapline_'.$id,'') ) ? '<h3 class="portfolio-item-category">'.get_field('portfolio_item_portfolio_item_strapline_'.$id,'').'</h3>': '';
+
+	$image = get_field('portfolio_item_portfolio_item_image_'.$id,'');
+	if( !empty( $image ) ) { $pimg = '<img src="'.esc_url($image['url']).'" alt="'.esc_attr($image['alt']).'"  class="img-cover">';} else { $pimg = '';};
+
+	$link = get_field('portfolio_item_portfolio_item_link_'.$id,'');
+	if( $link) {
+		$link_url = $link['url'];
+		$link_title = $link['title'];
+		$link_target = $link['target'] ? $link['target'] : '_self';
+		$output = '<a class="" href="'.esc_url( $link_url ).'" target="'.esc_attr($link_target).'" title="'.esc_html( $link_title ).'">
+		<div class="portfolio-item">'.$pimg.'
+				<div class="portfolio-item-overlay">
+					<div class="info">'.$pit.$pitbr.'</div>
+				</div>
+		</div>
+		</a>';
+	};
+
+	return $output;
+
+}
+
+
+function clientlogos() {
+        if( have_rows('client_logos','options') ):
+        $clientlogos = '';
+            while( have_rows('client_logos','options') ) : the_row();
+
+                $image = get_sub_field('client_logo');
+                if( !empty( $image ) ) {
+                    $clientlogos  .= ' <li class="splide__slide"><img src="'.esc_url($image['url']).'" alt="'.esc_attr($image['alt']).'"/></li>';
+                };
+
+            endwhile;
+
+            $clientlogos  .= '';
+
+        else : $clientlogos  = ''; endif;
+
+
+
+    $splide = '<section class="logo-slider">
+    <div class="container">			
+		<div class="holder">
+		    <div class="splide" id="splide_insurance">
+		    	<div class="splide__track"><ul class="splide__list">'.$clientlogos.'</ul>
+		    	</div>
+		    </div>
+		</div>
+        
+    </div>
+</section>';
+
+ return  $splide;
+}
+
+
+
+function calltoaction() {
+
+$calltoaction = '<div class="cta_01"><div class="content"><h2>Ready to start a project?</h2>
+<p>We care about you and your success and we want to show you just how much we do</p><a href="/contact-us/" class="btn">Get in touch</a></div></div> <!-- /.cta_01 -->';
+
+return $calltoaction;
+
+}
+
+
+function teammembers() {
+    if( have_rows('team_members','options') ):
+       // $teammember = '<div class="team">';
+        $teammember = '';
+        while( have_rows('team_members','options') ) : the_row();
+        
+            $member_name = get_sub_field('member_name');
+            $member_job_title = get_sub_field('member_job_title');
+            $image = get_sub_field('member_image');
+            if( !empty( $image ) ) {
+
+
+                $teammember  .= '<div class="njteam"><img src="'.esc_url($image['url']).'" alt="'.esc_attr($image['alt']).'" class="img-cover"><div class="hoverbox"> <div class="info">  <h2>'.$member_name.'</h2> <h3>'.$member_job_title.'</h3> </div> </div> </div>';
+            };
+
+        endwhile;
+        $teammember  .= '</div>';
+
+    else :  $teammember  = ''; endif;
+
+    return  $teammember ;
+}
+
+
+
+
 ?>

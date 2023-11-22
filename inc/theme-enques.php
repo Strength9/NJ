@@ -9,8 +9,10 @@ remove_action( 'wp_footer', 'wp_enqueue_global_styles', 1 );
 
 function warp9_scripts()  { 
 	//Javascript
+	
 	wp_enqueue_script( 'ws9-thp-splide', get_template_directory_uri() . '/assets/js/thirdparty/splide.js','','',true); 
 	wp_enqueue_script( 'ws9-ajax', get_template_directory_uri() . '/assets/js/script.js','','',true); 
+	
 	// New Enques Here --
 
 	wp_localize_script( 'ws9-ajax', 'frontend_ajax_object',

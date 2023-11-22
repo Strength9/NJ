@@ -7,7 +7,7 @@
  */
 
 function warp_fontawesome() {
-    $kitid = 'XXXXX.js';
+    $kitid = '7825d8b71b.js';
     echo '<script defer src="https://kit.fontawesome.com/'.$kitid.'" crossorigin="anonymous"></script>';
 }
 

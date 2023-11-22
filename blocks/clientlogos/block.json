@@ -1,0 +1,16 @@
+{
+    "name": "clientlogos",
+    "title": "Client logos",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/clientlogos/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

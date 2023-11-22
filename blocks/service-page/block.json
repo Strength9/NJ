@@ -1,6 +1,6 @@
 {
-    "name": "delete_me",
-    "title": "delete_me",
+    "name": "service-page",
+    "title": "Service Page",
     "description": "",
     "category": "theme",
     "icon": "awards",
@@ -8,7 +8,7 @@
     
     "acf": {
         "mode": "preview",
-        "renderTemplate": "blocks/delete_me/block.php"
+        "renderTemplate": "blocks/service-page/block.php"
     },
     "supports": {
         "anchor": true

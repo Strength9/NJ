@@ -1,0 +1,16 @@
+{
+    "name": "contact-page",
+    "title": "Contact Page",
+    "description": "",
+    "category": "theme",
+    "icon": "awards",
+    "apiVersion": 2,
+    
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "blocks/contact-page/block.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}
